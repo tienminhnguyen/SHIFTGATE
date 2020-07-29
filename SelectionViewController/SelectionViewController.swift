@@ -15,6 +15,7 @@ protocol SelectionVCDelegate {
 class SelectionViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
+    
     var delegate: SelectionVCDelegate?
     
     var data: [String] = []

@@ -11,7 +11,7 @@ import UIKit
 
 class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     var currentCar: Car = Car()
-
+    
     // Outlet Button
     @IBOutlet weak var btnFuelOther: UIButton!
     @IBOutlet weak var btnFuelLPG: UIButton!
@@ -25,7 +25,26 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var btnEnginePrevious: UIButton!
     @IBOutlet weak var btnHandleRight: UIButton!
     @IBOutlet weak var btnCheckGrade: UIButton!
+    @IBOutlet weak var btnDrivePrevious: UIButton!
     @IBOutlet weak var btnHandleLeft: UIButton!
+    @IBOutlet weak var btnDriveAfter: UIButton!
+    @IBOutlet weak var btnDriveFour: UIButton!
+    @IBOutlet weak var btnShiftTypeAT: UIButton!
+    @IBOutlet weak var btnShiftTypeMT: UIButton!
+    @IBOutlet weak var btnShiftTypeCVT: UIButton!
+    @IBOutlet weak var btnShiftPositionFloor: UIButton!
+    @IBOutlet weak var btnShiftPositionColumn: UIButton!
+    @IBOutlet weak var btnShiftPositionDashboard: UIButton!
+    @IBOutlet weak var btnShiftStep0: UIButton!
+    @IBOutlet weak var btnShiftStep3: UIButton!
+    @IBOutlet weak var btnShiftStep5: UIButton!
+    @IBOutlet weak var btnShiftStep7: UIButton!
+    @IBOutlet weak var btnShiftStep6: UIButton!
+    @IBOutlet weak var btnShiftStep8: UIButton!
+    @IBOutlet weak var btnShiftStep4: UIButton!
+    @IBOutlet weak var btnShiftStep2: UIButton!
+    @IBOutlet weak var btnRecycleYes: UIButton!
+    @IBOutlet weak var btnRecycleNo: UIButton!
     
     // Outlet TextField
     @IBOutlet weak var txtFormatNumber: UITextField!
@@ -38,6 +57,7 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var txtIntroduceCode: UITextField!
     @IBOutlet weak var txtFirstTimeRegister: UITextField!
     @IBOutlet weak var txtInspectExpired: UITextField!
+    @IBOutlet weak var txtRecyclePrice: UITextField!
     
     // Button Action
     @IBAction func txtFormatNumberAction(_ sender: UITextField) {
@@ -50,20 +70,111 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
         }
         moveToSelectionPage(list, type: "CarGrade")
     }
-
     @IBAction func txtCarNameFirstAction(_ sender: UITextField) {
         guard let list = currentCar.carBrand?.carNames.map({ $0.name }) else {
             return
         }
         moveToSelectionPage(list, type: "CarName")
     }
-
     @IBAction func txtMakerFirstAction(_ sender: Any) {
         let list = MockData.carBrands.map({ $0.name })
-        
         moveToSelectionPage(list, type: "CarBrand")
     }
-
+    @IBAction func btnHandlePositionLeftAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnHandlePositionRightAction(_ sender: UIButton) {
+         handleSelection(sender: sender)
+    }
+    @IBAction func btnEnginePositionAfterAction(_ sender: UIButton) {
+         handleSelection(sender: sender)
+    }
+    @IBAction func btnEnginePositionPreviousAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnEnginePositionCenterAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelGasAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelHybridAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelDieselAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelEVAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelCNGAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelLPGAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnFuelOtherAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnDrivePreviousAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnDriveAfterAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnDriveFourAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftTypeATAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftTypeMTAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftTypeCVTAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftPositionFloorAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftPositionDashboardAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftPositionColumnAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep0Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep3Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep5Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep7Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep6Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep4Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep2Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnShiftStep8Action(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnRecycleYesAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    @IBAction func btnRecycleNoAction(_ sender: UIButton) {
+        handleSelection(sender: sender)
+    }
+    
+    //viewDidLoad
     let datePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,13 +186,37 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
         addDropDownIcon()
         showDatePicker()
         btnCheckGrade.layer.cornerRadius = 7
-        RadiusButton()
+        handleRadiusButton()
     }
     
     func setupContent(){
     }
     
-    func RadiusButton()
+    func handleSelection(sender : UIButton){
+        if let parentView = sender.superview
+        {
+            deselectAllButtons(on: parentView)
+            selectButtons(button: sender)
+        }
+    }
+    
+    // Select button
+    func selectButtons(button: UIButton){
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+    }
+    // Deselect all buttons
+    func deselectAllButtons(on view: UIView){
+        for subView in view.subviews
+        {
+            if let button = subView as? UIButton {
+                button.backgroundColor = .none
+                button.setTitleColor(.black, for: .normal)
+            }
+        }
+    }
+    
+    func handleRadiusButton()
     {
         btnFuelOther.radiusButton()
         btnFuelLPG.radiusButton()
@@ -96,6 +231,31 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
         btnHandleRight.radiusButton()
         btnCheckGrade.radiusButton()
         btnHandleLeft.radiusButton()
+        btnEngineAfter.radiusButton()
+        btnEngineCenter.radiusButton()
+        btnEnginePrevious.radiusButton()
+        btnHandleRight.radiusButton()
+        btnCheckGrade.radiusButton()
+        btnDrivePrevious.radiusButton()
+        btnHandleLeft.radiusButton()
+        btnDriveAfter.radiusButton()
+        btnDriveFour.radiusButton()
+        btnShiftTypeAT.radiusButton()
+        btnShiftTypeMT.radiusButton()
+        btnShiftTypeCVT.radiusButton()
+        btnShiftPositionFloor.radiusButton()
+        btnShiftPositionColumn.radiusButton()
+        btnShiftPositionDashboard.radiusButton()
+        btnShiftStep0.radiusButton()
+        btnShiftStep3.radiusButton()
+        btnShiftStep5.radiusButton()
+        btnShiftStep7.radiusButton()
+        btnShiftStep6.radiusButton()
+        btnShiftStep8.radiusButton()
+        btnShiftStep4.radiusButton()
+        btnShiftStep2.radiusButton()
+        btnRecycleYes.radiusButton()
+        btnRecycleNo.radiusButton()
     }
     
     func moveToSelectionPage(_ list: [String], type: String){
@@ -127,7 +287,7 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
             txtGradeSecond.text = data
         }
     }
-
+    
     func showDatePicker(){
         datePicker.datePickerMode = .date
         var gregorian = Calendar.init(identifier: .gregorian)
@@ -149,15 +309,10 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func addDropDownIcon(){
-        //Maker
         txtMakerFirst.renderDropdowmImage()
-        //Car name
         txtCarNameFirst.renderDropdowmImage()
-        // Grade
         txtGradeFirst.renderDropdowmImage()
-        //First Time Register
         txtFirstTimeRegister.renderDropdowmImage()
-        //Inspect Expired
         txtInspectExpired.renderDropdowmImage()
     }
     

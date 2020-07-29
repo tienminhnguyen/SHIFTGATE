@@ -23,7 +23,7 @@ class TabViewSelection: UICollectionViewCell {
     func setupUI(){
         buttonTabBar.layer.cornerRadius = 7
         titleTabBar.textColor = UIColor.darkGray
-        titleTabBar.font = UIFont.boldSystemFont(ofSize: 16.0)
+        titleTabBar.font = UIFont.boldSystemFont(ofSize: 17.0)
     }
     
     func bindingData(data: String) {
