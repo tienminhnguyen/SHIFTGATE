@@ -22,10 +22,6 @@ class SelectionViewController: UIViewController{
     var type : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-//        data.append(Brand(carBrand:"トヨタ"))
-//        data.append(Brand(carBrand:"日産"))
-//        data.append(Brand(carBrand:"ホンダ"))
-        
         tableView.delegate = self
         tableView.dataSource = self
     }

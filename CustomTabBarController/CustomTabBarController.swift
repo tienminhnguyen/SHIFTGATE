@@ -11,16 +11,15 @@ import UIKit
 class CustomTabBarController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageView: UIView!
     var pageViewController: UIPageViewController!
     var pages = [UIViewController]()
     let tabBarTitles = ["基本","装備","色","開発図","質問事項","画像","車検証","価格"]
+    var currentTabIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
         setupUI()
-        setupContent()
     }
 
     func setupUI() {
@@ -53,15 +52,33 @@ extension CustomTabBarController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: TabViewSelection.identifier, for: indexPath) as! TabViewSelection
-        
-        collectionViewCell.bindingData(data: tabBarTitles[indexPath.row])
-        collectionViewCell.setupUI()
+        update(cell: collectionViewCell, at: indexPath)
         return collectionViewCell
+    }
+    
+    func update(cell: TabViewSelection, at indexPath: IndexPath)
+    {
+        let data = tabBarTitles[indexPath.row]
+        let selected = currentTabIndex == indexPath.row
+        cell.bindingData(data: data, selected: selected)
     }
 }
 
 extension CustomTabBarController:UICollectionViewDelegate{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let oldIndex = currentTabIndex
+        currentTabIndex = indexPath.row
+
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? TabViewSelection {
+            update(cell: currentCell, at: indexPath)
+        }
+        
+        let oldIndexPath = IndexPath(row: oldIndex, section: 0)
+        if let oldCell = collectionView.cellForItem(at: oldIndexPath) as? TabViewSelection {
+            update(cell: oldCell, at: oldIndexPath)
+        }
+        
+    }
 }
 
 extension CustomTabBarController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {

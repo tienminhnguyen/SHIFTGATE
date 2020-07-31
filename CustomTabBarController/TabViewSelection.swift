@@ -12,21 +12,30 @@ class TabViewSelection: UICollectionViewCell {
     
     class var identifier: String { return String.className(aClass: self) }
     
-    @IBOutlet weak var titleTabBar: UILabel!
-
-    @IBOutlet weak var buttonTabBar: TabViewSelection!
+    @IBOutlet weak var tabBarView: UIView!
+    @IBOutlet weak var lblTabBar: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    func setupUI(){
-        buttonTabBar.layer.cornerRadius = 7
-        titleTabBar.textColor = UIColor.darkGray
-        titleTabBar.font = UIFont.boldSystemFont(ofSize: 17.0)
+        setupUI()
     }
     
-    func bindingData(data: String) {
-        titleTabBar.text = data
+    func setupUI(){
+        tabBarView.layer.cornerRadius = 7
+        tabBarView.layer.borderWidth = 1
+        tabBarView.backgroundColor = .systemGray4
+        lblTabBar.textColor = .darkGray
+        lblTabBar.font =  UIFont.boldSystemFont(ofSize: 17.0)
+    }
+    
+    func bindingData(data: String, selected: Bool) {
+        lblTabBar.text = data
+        if selected {
+            tabBarView.backgroundColor = .systemBlue
+            lblTabBar.textColor = .white
+        } else {
+            tabBarView.backgroundColor = .systemGray4
+            lblTabBar.textColor = .darkGray
+        }
     }
 }

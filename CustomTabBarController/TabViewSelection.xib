@@ -16,37 +16,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="95" height="60"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKi-3T-Nrh" userLabel="TabBarButton" customClass="TabViewSelection" customModule="ShiftGate" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ue-Mm-1sC">
                         <rect key="frame" x="0.0" y="0.0" width="95" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG8-R1-7Rx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RH-9g-dtL">
                                 <rect key="frame" x="26.5" y="19.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pG8-R1-7Rx" firstAttribute="centerX" secondItem="nKi-3T-Nrh" secondAttribute="centerX" id="AdR-Ks-llb"/>
-                            <constraint firstItem="pG8-R1-7Rx" firstAttribute="centerY" secondItem="nKi-3T-Nrh" secondAttribute="centerY" id="XkW-uz-jtq"/>
+                            <constraint firstItem="7RH-9g-dtL" firstAttribute="centerY" secondItem="1ue-Mm-1sC" secondAttribute="centerY" id="5QC-Pp-0Pi"/>
+                            <constraint firstAttribute="height" constant="60" id="8fl-t5-m68"/>
+                            <constraint firstAttribute="width" constant="95" id="Ewb-Bj-WTb"/>
+                            <constraint firstItem="7RH-9g-dtL" firstAttribute="centerX" secondItem="1ue-Mm-1sC" secondAttribute="centerX" id="IAN-mv-jQr"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="nKi-3T-Nrh" secondAttribute="trailing" id="JGU-fu-68K" userLabel="trailing = TabBarButton.trailing"/>
-                <constraint firstItem="nKi-3T-Nrh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jc1-Vk-Rgm"/>
-                <constraint firstItem="nKi-3T-Nrh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KlM-43-Wq4" userLabel="TabBarButton.leading = leading"/>
-                <constraint firstAttribute="bottom" secondItem="nKi-3T-Nrh" secondAttribute="bottom" id="Klh-HQ-s2R"/>
+                <constraint firstItem="1ue-Mm-1sC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0Xv-Bf-52Y"/>
+                <constraint firstAttribute="bottom" secondItem="1ue-Mm-1sC" secondAttribute="bottom" id="P4E-VQ-s4s"/>
+                <constraint firstItem="1ue-Mm-1sC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wvM-OB-uQY"/>
+                <constraint firstAttribute="trailing" secondItem="1ue-Mm-1sC" secondAttribute="trailing" id="yhj-WZ-Zt9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="73" height="39"/>
             <connections>
-                <outlet property="buttonTabBar" destination="nKi-3T-Nrh" id="ruY-ww-Tu3"/>
-                <outlet property="titleTabBar" destination="pG8-R1-7Rx" id="prp-i1-vdv"/>
+                <outlet property="lblTabBar" destination="7RH-9g-dtL" id="zpD-s3-2SI"/>
+                <outlet property="tabBarView" destination="1ue-Mm-1sC" id="DQE-qS-4EH"/>
             </connections>
-            <point key="canvasLocation" x="147.82608695652175" y="112.5"/>
+            <point key="canvasLocation" x="147.10144927536234" y="112.5"/>
         </collectionViewCell>
     </objects>
 </document>
