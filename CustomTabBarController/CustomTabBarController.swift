@@ -38,7 +38,9 @@ class CustomTabBarController: BaseViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let generalPage = storyboard.instantiateViewController(identifier: "generalPage")
             let equipmentPage = storyboard.instantiateViewController(identifier: "equipmentPage")
-            pages = [generalPage, equipmentPage]
+            let carColorPage = storyboard.instantiateViewController(identifier: "carColorPage")
+            
+            pages = [generalPage, equipmentPage, carColorPage]
             
             pageViewController.setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         }
@@ -78,15 +80,19 @@ extension CustomTabBarController:UICollectionViewDelegate{
             update(cell: oldCell, at: oldIndexPath)
         }
         
+        if(oldIndex < currentTabIndex){
+            pageViewController.setViewControllers([pages[currentTabIndex]], direction: .forward, animated: true, completion: nil)
+        }else{
+            pageViewController.setViewControllers([pages[currentTabIndex]], direction: .reverse, animated: true, completion: nil)
+        }
+        
     }
 }
 
 extension CustomTabBarController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
-        
         currentIndex = (currentIndex - 1)
-        
         if currentIndex < 0 {
             return nil
         }
@@ -100,10 +106,33 @@ extension CustomTabBarController: UIPageViewControllerDataSource, UIPageViewCont
         if currentIndex >= pages.count {
             return nil
         }
+        
         return pages[currentIndex]
     }
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return pages.count
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool){
+        if completed,
+            let currentPage = pageViewController.viewControllers?.first,
+            let newIndex = pages.firstIndex(of: currentPage)
+        {
+            let currentIndexPath = IndexPath(row: currentTabIndex, section: 0)
+            currentTabIndex = newIndex
+            if let currentCell = collectionView.cellForItem(at: currentIndexPath) as? TabViewSelection {
+                update(cell: currentCell, at: currentIndexPath)
+            }
+            let newIndexPath = IndexPath(row: newIndex, section: 0)
+            if let newCell = collectionView.cellForItem(at: newIndexPath) as? TabViewSelection {
+                update(cell: newCell, at: newIndexPath)
+            }
+            
+            
+        }
     }
 }
 

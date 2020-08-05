@@ -328,9 +328,15 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     }
 }
 
+extension GeneralTableViewController: UITextViewDelegate{
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+}
+
 extension GeneralTableViewController: SelectionVCDelegate {
     func didSelect(_ viewController: SelectionViewController, data: String, type: String) {
-        
         if let carBrand = MockData.getCarBrand(name: data) {
             currentCar.carBrand = carBrand
         }
