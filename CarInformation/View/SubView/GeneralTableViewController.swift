@@ -45,46 +45,45 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var btnShiftStep2: UIButton!
     @IBOutlet weak var btnRecycleYes: UIButton!
     @IBOutlet weak var btnRecycleNo: UIButton!
-    
+    @IBOutlet weak var btnMakerFirst: DropdownButton!
+    @IBOutlet weak var btnCarNameFirst: DropdownButton!
+    @IBOutlet weak var btnGradeFirst: DropdownButton!
     // Outlet TextField
     @IBOutlet weak var txtFormatNumber: UITextField!
     @IBOutlet weak var txtGradeSecond: UITextField!
-    @IBOutlet weak var txtGradeFirst: UITextField!
     @IBOutlet weak var txtCarNameSecond: UITextField!
-    @IBOutlet weak var txtCarNameFirst: UITextField!
     @IBOutlet weak var txtMakerSecond: UITextField!
-    @IBOutlet weak var txtMakerFirst: UITextField!
     @IBOutlet weak var txtIntroduceCode: UITextField!
     @IBOutlet weak var txtFirstTimeRegister: UITextField!
     @IBOutlet weak var txtInspectExpired: UITextField!
     @IBOutlet weak var txtRecyclePrice: UITextField!
     
     // Button Action
+    @IBAction func btnMakerFirstAction(_ sender: Any) {
+        let list = MockData.carBrands.map({ $0.name })
+        moveToSelectionPage(list, type: "CarBrand")
+    }
     @IBAction func txtFormatNumberAction(_ sender: UITextField) {
     }
     @IBAction func btnCheckGrade(_ sender: UIButton) {
     }
-    @IBAction func txtGradeFirstAction(_ sender: UITextField) {
+    @IBAction func btnGradeFirstAction(_ sender: UIButton) {
         guard let list = currentCar.carName?.carGrades.map({ $0.name }) else {
-            return
-        }
-        moveToSelectionPage(list, type: "CarGrade")
+                   return
+               }
+               moveToSelectionPage(list, type: "CarGrade")
     }
-    @IBAction func txtCarNameFirstAction(_ sender: UITextField) {
+    @IBAction func btnCarNameFirstAction(_ sender: UIButton) {
         guard let list = currentCar.carBrand?.carNames.map({ $0.name }) else {
-            return
-        }
-        moveToSelectionPage(list, type: "CarName")
-    }
-    @IBAction func txtMakerFirstAction(_ sender: Any) {
-        let list = MockData.carBrands.map({ $0.name })
-        moveToSelectionPage(list, type: "CarBrand")
+                   return
+               }
+               moveToSelectionPage(list, type: "CarName")
     }
     @IBAction func btnHandlePositionLeftAction(_ sender: UIButton) {
         handleSelection(sender: sender)
     }
     @IBAction func btnHandlePositionRightAction(_ sender: UIButton) {
-         handleSelection(sender: sender)
+        handleSelection(sender: sender)
     }
     @IBAction func btnEnginePositionAfterAction(_ sender: UIButton) {
          handleSelection(sender: sender)
@@ -218,6 +217,9 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     
     func handleRadiusButton()
     {
+        btnMakerFirst.radiusButton()
+        btnCarNameFirst.radiusButton()
+        btnGradeFirst.radiusButton()
         btnFuelOther.radiusButton()
         btnFuelLPG.radiusButton()
         btnFuelCNG.radiusButton()
@@ -270,20 +272,20 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func recieveCarData(data: String, type: String) {
+    func bindingCarInfor(data: String, type: String) {
         if(type == "CarBrand")
         {
-            txtMakerFirst.text = data
+            btnMakerFirst.setTitle(data, for: .normal)
             txtMakerSecond.text = data
         }
         else if (type == "CarName")
         {
-            txtCarNameFirst.text = data
+            btnCarNameFirst.setTitle(data, for: .normal)
             txtCarNameSecond.text = data
         }
         else if (type == "CarGrade")
         {
-            txtGradeFirst.text = data
+            btnGradeFirst.setTitle(data, for: .normal)
             txtGradeSecond.text = data
         }
     }
@@ -309,9 +311,9 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func addDropDownIcon(){
-        txtMakerFirst.renderDropdowmImage()
-        txtCarNameFirst.renderDropdowmImage()
-        txtGradeFirst.renderDropdowmImage()
+        btnMakerFirst.renderDropdowmImage()
+        btnCarNameFirst.renderDropdowmImage()
+        btnGradeFirst.renderDropdowmImage()
         txtFirstTimeRegister.renderDropdowmImage()
         txtInspectExpired.renderDropdowmImage()
     }
@@ -328,19 +330,22 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     }
 }
 
-extension GeneralTableViewController: UITextViewDelegate{
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
-}
-
 extension GeneralTableViewController: SelectionVCDelegate {
+    // Recieve data
     func didSelect(_ viewController: SelectionViewController, data: String, type: String) {
-        if let carBrand = MockData.getCarBrand(name: data) {
-            currentCar.carBrand = carBrand
+        if type == "CarBrand"
+        {
+            currentCar.carBrand = MockData.getCarBrand(name: data)
         }
-        recieveCarData(data: data, type: type)
+        if type == "CarName", let carBrand = currentCar.carBrand
+        {
+            currentCar.carName = MockData.getCarName(name: data, in : carBrand)
+        }
+        if type == "CarGrade", let carName = currentCar.carName
+        {
+            currentCar.carGrade = MockData.getCarGrade(name: data, in: carName)
+        }
+        bindingCarInfor(data: data, type: type)
     }
 }
 

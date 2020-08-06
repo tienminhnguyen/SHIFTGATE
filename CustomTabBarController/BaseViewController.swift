@@ -55,27 +55,39 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     
     func addSlideMenuButton(){
         let btnShowMenu = UIButton(type: UIButton.ButtonType.system)
+        
         btnShowMenu.setImage(self.defaultMenuImage(), for: UIControl.State())
-        btnShowMenu.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btnShowMenu.frame = CGRect(x: 0, y: 0, width: 35, height: 30)
         btnShowMenu.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControl.Event.touchUpInside)
         let customBarItem = UIBarButtonItem(customView: btnShowMenu)
-        self.navigationItem.leftBarButtonItem = customBarItem;
+        
+        let btnSellCar = UIButton(type: UIButton.ButtonType.system)
+        btnSellCar.setTitle("出品", for: .normal)
+        btnSellCar.titleLabel?.font = .systemFont(ofSize: 18)
+        btnSellCar.setTitleColor(.white, for: .normal)
+        btnSellCar.backgroundColor = .systemBlue
+        btnSellCar.frame.size = CGSize(width: 90, height: 35)
+        btnSellCar.layer.cornerRadius = 7
+        let sellCarItem = UIBarButtonItem(customView: btnSellCar)
+        
+        self.navigationItem.leftBarButtonItem = customBarItem
+        self.navigationItem.rightBarButtonItem = sellCarItem
     }
 
     func defaultMenuImage() -> UIImage {
         var defaultMenuImage = UIImage()
         
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 20, height: 22), false, 0.0)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 23, height: 22), false, 0.0)
         
         UIColor.black.setFill()
-        UIBezierPath(rect: CGRect(x: 0, y: 3, width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 10, width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 17, width: 30, height: 1)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 3, width: 35, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 10, width: 35, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 17, width: 35, height: 3)).fill()
         
         UIColor.white.setFill()
-        UIBezierPath(rect: CGRect(x: 0, y: 4, width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 11,  width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 18, width: 30, height: 1)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 4, width: 35, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 11,  width: 35, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 18, width: 35, height: 3)).fill()
         
         defaultMenuImage = UIGraphicsGetImageFromCurrentImageContext()!
         

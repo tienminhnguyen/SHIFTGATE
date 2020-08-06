@@ -33,7 +33,7 @@ extension SelectionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "carBrandCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "carInforCell", for: indexPath)
         let carView = data[indexPath.row]
         cell.textLabel!.text = carView
         cell.textLabel!.font = UIFont.boldSystemFont(ofSize: 16.0)
@@ -43,8 +43,8 @@ extension SelectionViewController: UITableViewDataSource {
 
 extension SelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Send data
         delegate?.didSelect(self, data: data[indexPath.row], type: type)
-        // Back
         self.navigationController?.popViewController(animated: true)
     }
 }

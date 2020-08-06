@@ -377,24 +377,22 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u2-4L-38F" customClass="DropdownButton" customModule="ShiftGate" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="45" width="374" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="btnMakerFirstAction:" destination="nCg-HC-hes" eventType="touchUpInside" id="FwY-uE-KRl"/>
+                                                    </connections>
+                                                </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAT-68-xNe">
                                                     <rect key="frame" x="20" y="87" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQj-Q7-BNH">
-                                                    <rect key="frame" x="20" y="40" width="374" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <accessibility key="accessibilityConfiguration">
-                                                        <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                    </accessibility>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="txtMakerFirstAction:" destination="nCg-HC-hes" eventType="touchDown" id="BmU-cP-eLA"/>
-                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-1z-8t0">
                                                     <rect key="frame" x="359" y="11" width="35" height="21"/>
@@ -421,23 +419,24 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezF-pe-lTY">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1r-5M-sYM" customClass="DropdownButton" customModule="ShiftGate" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="40" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
-                                                        <action selector="txtCarNameFirstAction:" destination="nCg-HC-hes" eventType="touchDown" id="dzx-Jm-b7O"/>
+                                                        <action selector="btnCarNameFirstAction:" destination="nCg-HC-hes" eventType="touchUpInside" id="mSx-IS-wqq"/>
                                                     </connections>
-                                                </textField>
+                                                </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-zM-Ffz">
                                                     <rect key="frame" x="20" y="90" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-Jk-5oe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhO-69-hgb">
                                                     <rect key="frame" x="359" y="11" width="35" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -469,16 +468,17 @@
                                                     <color key="textColor" red="1" green="0.1647058824" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4l-P2-pvC">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6s-HS-vne" customClass="DropdownButton" customModule="ShiftGate" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="40" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
-                                                        <action selector="txtGradeFirstAction:" destination="nCg-HC-hes" eventType="touchDown" id="B16-R0-XLA"/>
+                                                        <action selector="btnGradeFirstAction:" destination="nCg-HC-hes" eventType="touchUpInside" id="82k-ZU-5FE"/>
                                                     </connections>
-                                                </textField>
+                                                </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQg-xs-5h5">
                                                     <rect key="frame" x="20" y="90" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -787,7 +787,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb0-LU-IiL" customClass="MyButton" customModule="ShiftGate" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb0-LU-IiL">
                                                     <rect key="frame" x="20" y="40" width="174" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -795,6 +795,9 @@
                                                     <state key="normal" title="左">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnHandlePositionLeftAction:" destination="nCg-HC-hes" eventType="touchUpInside" id="hSY-gr-nmo"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtH-gY-M11">
                                                     <rect key="frame" x="359" y="11" width="35" height="21"/>
@@ -803,13 +806,16 @@
                                                     <color key="textColor" red="1" green="0.1647058824" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-gU-SzT" customClass="MyButton" customModule="ShiftGate" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-gU-SzT">
                                                     <rect key="frame" x="220" y="40" width="174" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <state key="normal" title="右">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnHandlePositionRightAction:" destination="nCg-HC-hes" eventType="touchUpInside" id="JHc-Oo-3wm"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1362,6 +1368,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnCarNameFirst" destination="g1r-5M-sYM" id="Eq8-yy-bZc"/>
                         <outlet property="btnCheckGrade" destination="Raj-cA-oq2" id="U2p-bd-BM2"/>
                         <outlet property="btnDriveAfter" destination="usT-8L-yar" id="ABH-7G-wDW"/>
                         <outlet property="btnDriveFour" destination="SxV-Wo-szR" id="nMj-Jy-ZL4"/>
@@ -1376,8 +1383,10 @@
                         <outlet property="btnFuelHybrid" destination="m9H-1X-6TH" id="rGd-jM-VbC"/>
                         <outlet property="btnFuelLPG" destination="Ygy-um-iOF" id="15E-Nn-jWJ"/>
                         <outlet property="btnFuelOther" destination="c9A-uK-aiT" id="M1f-Ik-MpB"/>
+                        <outlet property="btnGradeFirst" destination="i6s-HS-vne" id="cF0-E1-zZe"/>
                         <outlet property="btnHandleLeft" destination="cb0-LU-IiL" id="seE-ii-vdS"/>
                         <outlet property="btnHandleRight" destination="2qq-gU-SzT" id="63o-Ny-zPU"/>
+                        <outlet property="btnMakerFirst" destination="1u2-4L-38F" id="0UZ-7A-Rl9"/>
                         <outlet property="btnRecycleNo" destination="Xin-iW-KKJ" id="Cuo-1P-03d"/>
                         <outlet property="btnRecycleYes" destination="2NF-3q-ffG" id="Ke9-oc-63V"/>
                         <outlet property="btnShiftPositionColumn" destination="f4V-f0-p1s" id="ewm-sU-o5v"/>
@@ -1394,15 +1403,12 @@
                         <outlet property="btnShiftTypeAT" destination="tOl-WN-OnI" id="EhP-ii-cJr"/>
                         <outlet property="btnShiftTypeCVT" destination="bmr-6N-JtC" id="UsL-6U-PRh"/>
                         <outlet property="btnShiftTypeMT" destination="JuT-tT-uWS" id="fLb-qZ-mWs"/>
-                        <outlet property="txtCarNameFirst" destination="ezF-pe-lTY" id="SVf-UO-WKj"/>
                         <outlet property="txtCarNameSecond" destination="jxd-zM-Ffz" id="taS-vo-iVE"/>
                         <outlet property="txtFirstTimeRegister" destination="t5X-z6-OGa" id="RVM-Fb-bG3"/>
                         <outlet property="txtFormatNumber" destination="da3-ol-FIs" id="pnz-nu-5bT"/>
-                        <outlet property="txtGradeFirst" destination="q4l-P2-pvC" id="ncz-F8-4ek"/>
                         <outlet property="txtGradeSecond" destination="UQg-xs-5h5" id="ngV-Lx-CPa"/>
                         <outlet property="txtInspectExpired" destination="jI9-h7-si0" id="Csc-wC-8fX"/>
                         <outlet property="txtIntroduceCode" destination="e4z-iD-iSt" id="xs6-I2-VbQ"/>
-                        <outlet property="txtMakerFirst" destination="oQj-Q7-BNH" id="Jcv-KL-haV"/>
                         <outlet property="txtMakerSecond" destination="qAT-68-xNe" id="8Wv-JM-3xg"/>
                         <outlet property="txtRecyclePrice" destination="tXH-wa-mWC" id="Uyh-6Z-5dy"/>
                     </connections>
