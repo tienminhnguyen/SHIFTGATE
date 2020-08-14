@@ -65,7 +65,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         btnSellCar.setTitle("出品", for: .normal)
         btnSellCar.titleLabel?.font = .systemFont(ofSize: 18)
         btnSellCar.setTitleColor(.white, for: .normal)
-        btnSellCar.backgroundColor = .systemBlue
+        btnSellCar.backgroundColor = UIColor(named: "Primary")
         btnSellCar.frame.size = CGSize(width: 90, height: 35)
         btnSellCar.layer.cornerRadius = 7
         let sellCarItem = UIBarButtonItem(customView: btnSellCar)

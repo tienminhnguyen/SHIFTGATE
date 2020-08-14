@@ -21,6 +21,13 @@
 		2E62717D24BEFD25003F01C6 /* TabViewSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62717B24BEFD25003F01C6 /* TabViewSelection.swift */; };
 		2E62717E24BEFD25003F01C6 /* TabViewSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E62717C24BEFD25003F01C6 /* TabViewSelection.xib */; };
 		2E62718124BF08B8003F01C6 /* String+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62718024BF08B8003F01C6 /* String+Custom.swift */; };
+		2E6618FA24E4EABC00D1CA1E /* WheelSizeMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6618F924E4EABC00D1CA1E /* WheelSizeMockData.swift */; };
+		2E6618FC24E4F17600D1CA1E /* DevelopmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6618FB24E4F17600D1CA1E /* DevelopmentViewController.swift */; };
+		2E6618FE24E4F1CE00D1CA1E /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6618FD24E4F1CE00D1CA1E /* QuestionTableViewController.swift */; };
+		2E66190024E4F1EF00D1CA1E /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6618FF24E4F1EF00D1CA1E /* ImageViewController.swift */; };
+		2E66190224E4F22900D1CA1E /* VehicleInspectionCerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66190124E4F22900D1CA1E /* VehicleInspectionCerViewController.swift */; };
+		2E66190624E4F26400D1CA1E /* TotalPriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66190524E4F26400D1CA1E /* TotalPriceTableViewController.swift */; };
+		2E92024224E103D3007B8D0E /* ColorMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92024124E103D3007B8D0E /* ColorMockData.swift */; };
 		2EE452CE24BDB9D20092CC75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE452CD24BDB9D20092CC75 /* AppDelegate.swift */; };
 		2EE452D024BDB9D20092CC75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE452CF24BDB9D20092CC75 /* SceneDelegate.swift */; };
 		2EE452D224BDB9D20092CC75 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE452D124BDB9D20092CC75 /* CustomTabBarController.swift */; };
@@ -59,6 +66,13 @@
 		2E62717B24BEFD25003F01C6 /* TabViewSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewSelection.swift; sourceTree = "<group>"; };
 		2E62717C24BEFD25003F01C6 /* TabViewSelection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabViewSelection.xib; sourceTree = "<group>"; };
 		2E62718024BF08B8003F01C6 /* String+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Custom.swift"; sourceTree = "<group>"; };
+		2E6618F924E4EABC00D1CA1E /* WheelSizeMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelSizeMockData.swift; sourceTree = "<group>"; };
+		2E6618FB24E4F17600D1CA1E /* DevelopmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentViewController.swift; sourceTree = "<group>"; };
+		2E6618FD24E4F1CE00D1CA1E /* QuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewController.swift; sourceTree = "<group>"; };
+		2E6618FF24E4F1EF00D1CA1E /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		2E66190124E4F22900D1CA1E /* VehicleInspectionCerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInspectionCerViewController.swift; sourceTree = "<group>"; };
+		2E66190524E4F26400D1CA1E /* TotalPriceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceTableViewController.swift; sourceTree = "<group>"; };
+		2E92024124E103D3007B8D0E /* ColorMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMockData.swift; sourceTree = "<group>"; };
 		2EE452CA24BDB9D20092CC75 /* ShiftGate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiftGate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE452CD24BDB9D20092CC75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EE452CF24BDB9D20092CC75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,8 +189,20 @@
 				2E260D9F24C5365100BF1113 /* GeneralTableViewController.swift */,
 				2E260DA124C5366A00BF1113 /* EquipmentTableViewController.swift */,
 				2E260DA324C5367A00BF1113 /* CarColorTableViewController.swift */,
+				2E6618FB24E4F17600D1CA1E /* DevelopmentViewController.swift */,
+				2E6618FD24E4F1CE00D1CA1E /* QuestionTableViewController.swift */,
+				2E6618FF24E4F1EF00D1CA1E /* ImageViewController.swift */,
+				2E66190124E4F22900D1CA1E /* VehicleInspectionCerViewController.swift */,
+				2E66190524E4F26400D1CA1E /* TotalPriceTableViewController.swift */,
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		2E66190A24E68DDB00D1CA1E /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		2EE452C124BDB9D20092CC75 = {
@@ -200,6 +226,7 @@
 		2EE452CC24BDB9D20092CC75 /* ShiftGate */ = {
 			isa = PBXGroup;
 			children = (
+				2E66190A24E68DDB00D1CA1E /* MockData */,
 				2E260DA724C5A8B200BF1113 /* SelectionViewController */,
 				2E62719824C14FF0003F01C6 /* CarInformation */,
 				2E62718924C0032E003F01C6 /* AppDelegate */,
@@ -212,6 +239,8 @@
 				2EE452DE24BDB9FE0092CC75 /* Info.plist */,
 				2EE452D624BDB9D20092CC75 /* ShiftGate.xcdatamodeld */,
 				2E260DAC24C6D50100BF1113 /* MockData.swift */,
+				2E92024124E103D3007B8D0E /* ColorMockData.swift */,
+				2E6618F924E4EABC00D1CA1E /* WheelSizeMockData.swift */,
 			);
 			path = ShiftGate;
 			sourceTree = "<group>";
@@ -329,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E260DA424C5367A00BF1113 /* CarColorTableViewController.swift in Sources */,
+				2E66190224E4F22900D1CA1E /* VehicleInspectionCerViewController.swift in Sources */,
 				2EE452F324BDBA260092CC75 /* BaseViewController.swift in Sources */,
 				2EE452F524BDBB140092CC75 /* MenuViewController.swift in Sources */,
 				2EE452D224BDB9D20092CC75 /* CustomTabBarController.swift in Sources */,
@@ -337,15 +367,21 @@
 				2E260DA624C5A77500BF1113 /* UITextField+Extension.swift in Sources */,
 				2E260DA224C5366A00BF1113 /* EquipmentTableViewController.swift in Sources */,
 				2EE452D824BDB9D20092CC75 /* ShiftGate.xcdatamodeld in Sources */,
+				2E92024224E103D3007B8D0E /* ColorMockData.swift in Sources */,
 				2E260DAB24C5A95600BF1113 /* SelectionViewController.swift in Sources */,
+				2E6618FE24E4F1CE00D1CA1E /* QuestionTableViewController.swift in Sources */,
 				2EE452CE24BDB9D20092CC75 /* AppDelegate.swift in Sources */,
 				2E62717124BEB295003F01C6 /* DocumentViewController.swift in Sources */,
 				2E62718124BF08B8003F01C6 /* String+Custom.swift in Sources */,
 				2E62717324BEB772003F01C6 /* IntroduceViewController.swift in Sources */,
 				2E260DAD24C6D50100BF1113 /* MockData.swift in Sources */,
+				2E6618FA24E4EABC00D1CA1E /* WheelSizeMockData.swift in Sources */,
 				2EE452F824BE9E6A0092CC75 /* HomeViewController.swift in Sources */,
+				2E66190624E4F26400D1CA1E /* TotalPriceTableViewController.swift in Sources */,
+				2E6618FC24E4F17600D1CA1E /* DevelopmentViewController.swift in Sources */,
 				2E62717524BEB7D6003F01C6 /* ContractViewController.swift in Sources */,
 				2EE452D024BDB9D20092CC75 /* SceneDelegate.swift in Sources */,
+				2E66190024E4F1EF00D1CA1E /* ImageViewController.swift in Sources */,
 				2E260DA024C5365100BF1113 /* GeneralTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

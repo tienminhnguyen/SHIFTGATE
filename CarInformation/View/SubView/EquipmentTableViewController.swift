@@ -10,6 +10,7 @@ import UIKit
 
 class EquipmentTableViewController: UITableViewController {
     
+    var selectedWheelSize : WheelSizeInfor = WheelSizeInfor()
     // Button Outlet
     @IBOutlet weak var btnOdoNotClear: UIButton!
     @IBOutlet weak var btnOdoNo: UIButton!
@@ -21,6 +22,7 @@ class EquipmentTableViewController: UITableViewController {
     @IBOutlet weak var btnOdoRecordYes: UIButton!
     @IBOutlet weak var btnOdoRecordNo: UIButton!
     
+    @IBOutlet weak var btnWheelSize: DropdownButton!
     @IBOutlet weak var btnInstructionNavigation: UIButton!
     @IBOutlet weak var btnVehicleManual: UIButton!
     @IBOutlet weak var btnInstructionOdo: UIButton!
@@ -49,10 +51,11 @@ class EquipmentTableViewController: UITableViewController {
     @IBOutlet weak var btnTireSpring: UIButton!
     @IBOutlet weak var btnInstructionOther: UIButton!
     
-    // Textfield Outlet
-    @IBOutlet weak var txtAluminumSize: UITextField!
-    
     // Button Action
+    @IBAction func btnWheelSizeAction(_ sender: DropdownButton) {
+        let list = WheelSizeDataMock.carWheelSizes.map({ $0.size })
+        moveToSelectionPage(list, type: "")
+    }
     @IBAction func btnOdoNotClearAction(_ sender: UIButton) {
         handleSelection(sender: sender)
         btnOdoRecordYes.isEnabled = true
@@ -209,8 +212,8 @@ class EquipmentTableViewController: UITableViewController {
         btnTireWinter.radiusButton()
         btnTireSpring.radiusButton()
         btnInstructionOther.radiusButton()
-        
-        txtAluminumSize.renderDropdowmImage()
+        btnWheelSize.radiusButton()
+        btnWheelSize.renderDropdowmImage()
         disableOdoRecordButton()
     }
     
@@ -236,7 +239,7 @@ class EquipmentTableViewController: UITableViewController {
     
     // Select button
     func selectButtons(button: UIButton){
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = UIColor(named: "Primary")
         button.setTitleColor(.white, for: .normal)
     }
     // Deselect all buttons
@@ -248,5 +251,29 @@ class EquipmentTableViewController: UITableViewController {
                 button.setTitleColor(.black, for: .normal)
             }
         }
+    }
+    
+    func bindingWheelSize(data: String, type: String){
+       btnWheelSize.setTitle(data, for: .normal)
+    }
+    
+    func moveToSelectionPage(_ list: [String], type: String){
+        
+        let storyboard = UIStoryboard(name: "Selection", bundle: Bundle.main)
+        let name = String(describing: SelectionViewController.self)
+        let vc = storyboard.instantiateViewController(identifier: name) as! SelectionViewController
+        vc.data = list
+        vc.type = type
+        vc.delegate = self
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension EquipmentTableViewController : SelectionVCDelegate{
+    // Recieve data
+    func didSelect(_ viewController: SelectionViewController, data: String, type: String) {
+        selectedWheelSize.carWheelSize = WheelSizeDataMock.getWhileSize(size: data)
+        bindingWheelSize(data: data, type: type)
     }
 }

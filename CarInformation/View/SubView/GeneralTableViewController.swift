@@ -59,7 +59,7 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var txtRecyclePrice: UITextField!
     
     // Button Action
-    @IBAction func btnMakerFirstAction(_ sender: Any) {
+    @IBAction func btnMakerFirstAction(_ sender: UIButton) {
         let list = MockData.carBrands.map({ $0.name })
         moveToSelectionPage(list, type: "CarBrand")
     }
@@ -182,9 +182,8 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func setupUI(){
-        addDropDownIcon()
+        handleRenderDropdownIcon()
         showDatePicker()
-        btnCheckGrade.layer.cornerRadius = 7
         handleRadiusButton()
     }
     
@@ -201,7 +200,7 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
     
     // Select button
     func selectButtons(button: UIButton){
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = UIColor(named: "Primary")
         button.setTitleColor(.white, for: .normal)
     }
     // Deselect all buttons
@@ -258,6 +257,7 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
         btnShiftStep2.radiusButton()
         btnRecycleYes.radiusButton()
         btnRecycleNo.radiusButton()
+        btnCheckGrade.layer.cornerRadius = 7
     }
     
     func moveToSelectionPage(_ list: [String], type: String){
@@ -310,7 +310,7 @@ class GeneralTableViewController: UITableViewController, UITextFieldDelegate {
         txtInspectExpired.inputView = datePicker
     }
     
-    func addDropDownIcon(){
+    func handleRenderDropdownIcon(){
         btnMakerFirst.renderDropdowmImage()
         btnCarNameFirst.renderDropdowmImage()
         btnGradeFirst.renderDropdowmImage()

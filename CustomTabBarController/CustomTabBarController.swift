@@ -39,8 +39,13 @@ class CustomTabBarController: BaseViewController {
             let generalPage = storyboard.instantiateViewController(identifier: "generalPage")
             let equipmentPage = storyboard.instantiateViewController(identifier: "equipmentPage")
             let carColorPage = storyboard.instantiateViewController(identifier: "carColorPage")
+            let developementPage = storyboard.instantiateViewController(identifier: "developmentPage")
+            let questionPage = storyboard.instantiateViewController(identifier: "questionPage")
+            let imagePage = storyboard.instantiateViewController(identifier: "imagePage")
+            let vehicleInspectPage = storyboard.instantiateViewController(identifier: "vehicleInspectionPage")
+            let totalPricePage = storyboard.instantiateViewController(identifier: "totalPricePage")
             
-            pages = [generalPage, equipmentPage, carColorPage]
+            pages = [generalPage, equipmentPage, carColorPage, developementPage, questionPage, imagePage, vehicleInspectPage, totalPricePage]
             
             pageViewController.setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         }

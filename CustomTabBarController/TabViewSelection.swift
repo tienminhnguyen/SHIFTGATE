@@ -31,7 +31,7 @@ class TabViewSelection: UICollectionViewCell {
     func bindingData(data: String, selected: Bool) {
         lblTabBar.text = data
         if selected {
-            tabBarView.backgroundColor = .systemBlue
+            tabBarView.backgroundColor = UIColor(named: "Primary")
             lblTabBar.textColor = .white
         } else {
             tabBarView.backgroundColor = .systemGray4
